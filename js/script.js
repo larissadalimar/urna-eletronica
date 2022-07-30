@@ -184,6 +184,12 @@ function corrigir() {
   comecarEtapa()
 }
 
+function votar(voto){
+  let url = `/php/votacao.php?numero=${voto}`
+  ajax(url, 'POST', (response) => {
+    console.log(response)
+  })
+}
 /**
  * Confirma o numero selecionado.
  */
@@ -200,6 +206,7 @@ function confirmar() {
         'numero': numeroDigitado
       })
       console.log(`Votou em ${numeroDigitado}`)
+      votar(numeroDigitado)
     } else {
       // Votou nulo
       votos.push({

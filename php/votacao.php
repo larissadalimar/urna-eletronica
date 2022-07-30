@@ -1,28 +1,41 @@
 <?php
 
-include("connection.php");
-
 header('Content-type: application/json');
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Methods: OPTIONS,GET,POST,PUT,DELETE");
 
+include("connection.php");
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if(isset( $_GET['numero'])){
+    if(isset($_GET['numero'])){
         $voto = $_GET['numero'];
-        $sql = "UPDATE candidatos set votos = votos + 1 where numero='".$voto."'";
+        $sql = "update candidatos set votos = votos + 1 where numero='".$voto."'";
         $result = $mysqli->query($sql);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "\ntrue";
-    } else {
-        echo "\nerror: " . $conn->error;
-    }
-
+        echo "Votação bem sucedida!";
     }
 }
 
-if($_SERVER['REQUEST_METHOD'] === 'GET')
+if($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+    $sql = "select * from candidatos";
+
+    $result = $mysqli->query($sql);
+    
+    $output = array();
+
+    while($row = $result->fetch_assoc()) {
+
+      $output[] = array( 'id' => $row['id'],  'nome' => $row['nome'], 'numero' => $row['numero'], 'partido' => $row['partido'], 'cargo_pretendido' => $row['cargo_pretendido'], 'foto' => $row['foto'],  'votos' => $row['votos'] );
+    }
+
+    echo json_encode($output, JSON_UNESCAPED_UNICODE);
+
+   
+}
+
+mysqli_close($conn);
+?>
 
