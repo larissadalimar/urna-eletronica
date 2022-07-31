@@ -7,7 +7,7 @@ include("connection.php");
 if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $sql = "UPDATE candidatos SET_votos = 0";
-    //$result = $mysqli->query($sql);
+    $result = $mysqli->query($sql);
 
 }
 ?>
