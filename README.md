@@ -10,8 +10,8 @@ Link do site online: [https://urna-eletronica.000webhostapp.com/](https://urna-e
 
 ## Como visualizar a aplicação localmente
 
-1. Clonar este repositório dentro da pasta htdocs do XAMPP ou do seu server HTTP. Dentro da pasta do projeto existe um arquivo db.sql que armazena todo o SQL necessário para o projeto, você só precisa importar o arquivo no seu MYSQL ou PHPMyAdmin caso utilize o XAMPP.
-
-Depois do projeto clonado e do SQL inserido no banco, você precisará entrar na pasta do projeto e alterar o arquivo conexao.php para as suas variáveis do MYSQL (user, dbname, password, hostname).
-
-Depois destas etapas feitas, o projeto já estará rodando.
+1. Clonar este repositório dentro da pasta htdocs do XAMPP ou do seu servidor apache de preferência. 
+2. No caso de utilizar o XAMPP, rodar o MySQL Datase e o Apache Web Server.
+3. Importar o arquivo `php/database.sql` para popular o banco de dados no seu MYSQL, ou PHPMyAdmin, caso esteja usando o XAMPP e queira utilizá-lo.
+4. Alterar o arquivo `php/connection.php` com as credenciais do seu banco no MYSQL (username, password, hostname, database).
+5. Acessar o projeto em `http://localhost/urna-eletronica/`.
