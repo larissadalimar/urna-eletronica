@@ -15,3 +15,8 @@ Link do site online: [https://urna-eletronica.000webhostapp.com/](https://urna-e
 3. Importar o arquivo `php/database.sql` para popular o banco de dados no seu MYSQL, ou PHPMyAdmin, caso esteja usando o XAMPP e queira utilizá-lo.
 4. Alterar o arquivo `php/connection.php` com as credenciais do seu banco no MYSQL (username, password, hostname, database).
 5. Acessar o projeto em `http://localhost/urna-eletronica/`.
+
+## Documentação
+
+- Documentação Jsdoc está em `out/index.html`
+- Documentação Doxygen está em `doxygen/html/index.html`
