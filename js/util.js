@@ -1,3 +1,12 @@
+/**
+ * Faz a integração para troca de dados entre front e back
+ * 
+ * @param url
+ * @param method
+ * @param callback
+ * 
+ */
+
 function ajax(url, method, callback) {
   let request = new XMLHttpRequest();
   request.overrideMimeType("application/json");
